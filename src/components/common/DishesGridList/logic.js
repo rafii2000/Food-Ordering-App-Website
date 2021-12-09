@@ -94,7 +94,7 @@ export default function useDishesGridList(type) {
                            
                 
         },
-        [isLogged, currentDishType, userAccountFavDishes, userAccountFavDishesList],
+        [isLogged, currentDishType, userAccountFavDishes, userAccountFavDishesList, userCachedFavDishes, userCachedFavDishesList],
     )
 
 
