@@ -1,0 +1,73 @@
+.user_not_logged_prompt{
+    /* width: calc(100% - 40px); */
+    width: calc(100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    /* padding: 30px 20px 25px 20px; */
+    padding: 30px 0px 25px 0px;
+
+    transition: height 0.6s;
+    overflow: hidden;
+}
+
+.user_not_logged_prompt > span{
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--accent_color) 
+}
+
+.user_not_logged_prompt > span > span{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.user_not_logged_prompt > span > span > svg{
+    font-size: 25px;
+    margin-right: 5px;
+        
+}
+
+.user_not_logged_prompt > span > span > button{
+    background-color: transparent;
+    border: 0;
+    padding: 5px;
+    font-size: 13px;
+    color: var(--accent_color);
+    cursor: pointer;
+}
+
+
+.user_not_logged_prompt__more > p{
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.user_not_logged_prompt__more__hyperlinks{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.user_not_logged_prompt__more__hyperlinks > a{
+    font-size: 13px;
+    color: var(--accent_color) 
+}
+
+
+
+
+
+

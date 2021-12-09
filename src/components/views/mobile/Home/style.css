@@ -1,0 +1,15 @@
+
+
+.home_page__content{
+}
+
+.home_page__search_bar{
+    margin-top: 16px;
+}
+
+@media only screen and (min-width: 400px) {
+    .home_page__content{
+        width: 90%;
+        margin: 0 auto;
+    }
+}

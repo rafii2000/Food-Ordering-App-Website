@@ -1,0 +1,229 @@
+.order_subpage__description{
+    margin: auto;
+    text-align: center;
+    background-color: white;
+
+    z-index: 2;
+    position: relative;
+
+}
+
+.order_subpage__description > h1{
+
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: var(--primary_color);
+}
+
+.order_subpage__description > p{
+    width: 85%;
+    margin: auto;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 21px;
+    color: var(--secondary_color);
+    margin-top: 15px;
+}
+
+.order_subpage__dish_image{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: visible;
+}
+
+.order_subpage__dish_image__background{
+    width: 100vw;
+    height: 85vw;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.1);
+
+    border-radius: 0 0 50% 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.order_subpage__dish_image__background > img{
+    width: 200px;
+    height: auto;
+}
+
+
+
+
+
+
+
+.order_subpage__buttons_panel__dish_sizes{
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    z-index: 2;
+}
+
+
+
+.order_subpage__buttons_panel__dish_sizes > div:nth-child(1){
+    position: absolute;
+    left: 10%;
+    top: calc(85vw * -0.18);
+}
+
+.order_subpage__buttons_panel__dish_sizes > div:nth-child(2){
+    position: absolute;
+    top: calc(85vw * -0.04);
+}
+
+.order_subpage__buttons_panel__dish_sizes > div:nth-child(3){
+    position: absolute;
+    right: 10%;
+    top: calc(85vw * -0.18);
+}
+
+
+.order_subpage__buttons_panel__dishes_counter{
+    
+    display: flex;
+    justify-content: center;
+    margin-top: 37px;
+
+   
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+.dishes_counter__label{
+    margin: 0px 25px;
+    width: 65px;
+    
+
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+    color: var(--primary_color);
+    
+}
+
+
+
+.order_subpage__order_summary{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 77px;
+    padding-bottom: 25px;
+}
+
+.order_subpage__order_price{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+.order_subpage__order_price__label{
+  
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--secondary_color);
+    margin-bottom: 5px;
+}
+
+.order_subpage__order_price__number{
+   
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    color: var(--primary_color);
+}
+
+.order_subpage__go_to_cart_button{
+    display: flex;
+    align-items: center;
+
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 25px;
+
+    padding: 19px 24px;
+    border-radius: 10px 0px 0px 10px;
+    color: var(--primary_color--light);
+    background-color: var(--accent_color);
+
+}
+
+.order_subpage__go_to_cart_button > svg{
+    margin-right: 13px;
+}
+
+
+@media only screen and (min-width: 400px){
+
+    .order_subpage__dish_image__background{
+        width: 100vw;
+        height: 70vw;
+       
+    }
+}
+
+@media only screen and (min-width: 500px){
+
+    .order_subpage__dish_image__background{
+        width: 100vw;
+        height: 60vw;  
+    }
+
+    .order_subpage__buttons_panel__dish_sizes > div:nth-child(1),
+    .order_subpage__buttons_panel__dish_sizes > div:nth-child(3){
+        top: calc(60vw * -0.18);
+    }
+    
+    .order_subpage__buttons_panel__dish_sizes > div:nth-child(2){
+        top: calc(60vw * -0.04);
+    }
+    
+}
+
+@media only screen and (min-width: 600px){
+
+    .order_subpage__dish_image__background{
+        width: 100vw;
+        height: 50vw;  
+    }
+    
+}
+
+@media only screen and (min-width: 700px){
+
+    .order_subpage__dish_image__background{
+        width: 100vw;
+        height: 40vw;  
+    }
+    
+    .order_subpage__buttons_panel__dish_sizes > div:nth-child(1),
+    .order_subpage__buttons_panel__dish_sizes > div:nth-child(3){
+        top: calc(40vw * -0.21);
+    }
+    
+    .order_subpage__buttons_panel__dish_sizes > div:nth-child(2){
+        top: calc(40vw * -0.04);
+    }
+}
+
+@media only screen and (min-width: 700px){
+
+    .order_subpage__dish_image__background{
+        width: 100vw;
+        height: 35vw;  
+    }
+    
+   
+}

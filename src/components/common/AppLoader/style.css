@@ -1,0 +1,20 @@
+
+
+.fetching_data{
+    padding-top: 35vh;
+}
+
+.fetching_data > section{
+    text-align: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.fetching_data > section > p{
+    font-size: 25px;
+    margin-top: 30px;
+}
+

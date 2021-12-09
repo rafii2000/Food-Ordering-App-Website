@@ -1,0 +1,27 @@
+
+
+
+:root{
+
+    /* APP/FONT COLORS */
+    --primary_background: white;
+
+    --primary_color: black;
+    --primary_color--light: white;
+
+    --secondary_color: #435D6B;
+    --secondary_color--light: #667C8A;
+
+    --accent_color: #C8161D;
+    --accent_color--light: #F27D82;
+
+
+    /* NAVIGATION */
+    --nav_height: 66px;
+
+
+    /* PADDING */
+    --default_padding: 15px;
+    
+}
+

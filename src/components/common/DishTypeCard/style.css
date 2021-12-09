@@ -1,0 +1,112 @@
+.dish_type_card{
+    
+    min-width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    padding: 15px;
+    border-radius: 20px;
+    cursor: pointer;
+
+    fill: var(--primary-color);
+    color: var(--primary-color);
+    background-color: white;
+    filter: drop-shadow(6px -6px 30px rgba(0, 0, 0, 0.1)) drop-shadow(6px 6px 30px rgba(0, 0, 0, 0.1));
+}
+
+.dish_type_card--active{
+    min-width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    padding: 15px;
+    border-radius: 20px;
+    cursor: pointer;
+
+    /* active styles */
+    fill: var(--primary_color--light);
+    color: var(--primary_color--light);
+    background-color: var(--accent_color);
+    filter: none;
+}
+
+.dish_type_card__image{
+    width: 45px;
+    height: 45px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: white;
+
+}
+
+.dish_type_card__image > img{
+    width: 100%;
+    height: auto;
+}
+
+
+.dish_type_card__name{
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    margin: 23px 0px;
+    color: inherit;
+}
+
+.dish_type_card__button,
+.dish_type_card__button > svg,
+.dish_type_card__button > svg > path{
+    fill: inherit;
+}
+
+/* MOBILE MEDIA QUERIES */
+
+@media only screen and (min-width: 420px){
+
+    .dish_type_card,
+    .dish_type_card--active{
+        width: 20%;
+    }
+}
+
+@media only screen and (min-width: 600px){
+
+    .dish_type_card,
+    .dish_type_card--active{
+        width: 25%;
+    }
+}
+
+
+
+/* DESKTOP MEDIA QUERIES */
+
+@media only screen and (min-width: 850px){
+
+    .dish_type_card,
+    .dish_type_card--active{
+        width: auto;
+        min-width: 140px;
+        padding: 10px 15px;
+        padding-right: 20px;
+        flex-direction: row;
+        margin-right: 15px;
+
+        align-items: center;
+    }
+
+    .dish_type_card__name{
+        margin: 0px 15px;
+    }
+
+    .dish_type_card__button > svg{
+        display: block;
+    }
+
+     
+}
+

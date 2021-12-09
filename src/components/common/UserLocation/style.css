@@ -1,0 +1,20 @@
+
+.user_location{
+    display: flex;
+    align-items: center;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.user_location__city{
+    margin-left: 10px;
+    color: var(--primary_color);
+}
+
+.user_location__country{
+    margin-left: 3px;
+    text-transform: uppercase;
+    color: var(--secondary_color--light);
+}

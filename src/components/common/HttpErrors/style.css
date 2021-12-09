@@ -1,0 +1,64 @@
+.http_error{
+
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+}
+
+.http_error > section{
+    text-align: center;
+}
+
+.http_error > section > h2{
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.http_error > section > p{
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 50px;
+}
+
+.http_error > section > button{
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--accent_color);
+    color: white;
+    padding: 10px 50px;
+    font-size: 16px;    
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;  
+}
+
+.http_error > section > button > svg{
+    
+    color: white;
+}
+
+
+
+/* form mobiles */
+@media only screen and (max-width: 600px){
+    .http_error > section > h2{
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    
+    .http_error > section >p{
+        font-size: 17px;
+        font-weight: 300;
+        margin-bottom: 50px;
+    }
+    
+    .http_error > section >a{
+        padding: 5px 30px;
+        font-size: 16px;
+        border-radius: 5px;
+    }
+}
+

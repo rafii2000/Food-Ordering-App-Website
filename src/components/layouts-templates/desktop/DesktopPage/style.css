@@ -1,0 +1,197 @@
+.desktop_page{
+    height: 100vh;
+    width: 100%;
+
+ 
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-columns: min-content auto min-content;
+    column-gap: 0px;
+
+    overflow: hidden;
+}
+
+
+/* ----- NAV ------ */
+.desktop_page > nav{
+    height: calc(100vh - 70px);
+    padding: 35px 15px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    box-shadow: 6px 6px 30px rgba(67, 93, 107, 0.25), -6px -6px 30px rgba(67, 93, 107, 0.25);
+    border-radius: 0% 25% 25% 0%;
+
+    overflow-y: hidden;
+
+}
+
+.nav__overflow_wrapper{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow-y: scroll;
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.nav__overflow_wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+/* ----- MAIN ------ */
+
+.desktop_page > main{
+    height: calc(100vh - 80px);
+    padding: 40px 80px;
+    overflow-y: scroll;
+
+    transition: width 1s;
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+ /* Hide scrollbar for Chrome, Safari and Opera */
+ .desktop_page > main::-webkit-scrollbar {
+    display: none;
+}
+  
+
+
+
+
+
+/* ----- SIDE BAR ------ */
+.side_bar{
+    height: 100vh;
+    width: 350px;
+    margin-left: 40px;
+    padding: 30px 0px;
+    background-color: transparent;
+    transition: width 0.9s;      
+}
+
+
+.side_bar__relative_wrapper{
+    width: 350px;
+    height: auto;
+    position: relative;
+    background-color: transparent;
+
+}
+
+.toggle_side_bar{
+    width: 350px !important;
+}
+
+.side_bar__toggle_button{
+    opacity: 0;
+    transition: opacity 1s;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 20px 0px;
+    background-color: transparent;
+    transition: transform 1s;
+}
+.toggle_button--rotate180{
+    transform: rotate(180deg);
+}
+
+
+.side_bar__content{
+    height: calc(100vh - 60px);
+    width: 320px;
+    padding: 0px var(--default_padding);
+    overflow: scroll;
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.side_bar__content::-webkit-scrollbar {
+   display: none;
+}
+
+.side_bar__content[wobble='1'] {
+    animation: wobble 0.5s;
+}
+
+@keyframes wobble {
+    0% {
+        transform: scale(1.00);
+    }
+
+    50%{
+        transform: scale(1.03);
+    }
+
+    100% {
+        transform: scale(1.00);
+    }
+}
+
+
+
+.side_bar__curved_border{
+    height: 200vh;
+    width: 450px;
+    
+
+    position: absolute;
+    left: -35px;
+    top: -50vh;
+    z-index: -1;
+   
+    box-shadow: 6px 6px 30px rgba(67, 93, 107, 0.25), -6px -6px 30px rgba(67, 93, 107, 0.25);
+    border-radius: 100% 0% 0% 100%;
+    background-color: rgb(255, 255, 255);
+    
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+}
+
+
+
+
+
+/* hide cart side_bar */
+@media only screen and (max-width: 1300px){
+        
+    .side_bar{
+        width: 10px;
+    }
+    
+    .side_bar__relative_wrapper{
+        position: fixed;
+        right: 0;
+        transition: inherit;
+        width: 10px;
+    }
+
+    .side_bar__toggle_button{
+        opacity: 1;
+        margin-left: 5px;
+    }
+
+    .side_bar__content[wobble='1'] {
+        animation: unset;
+    }
+
+}

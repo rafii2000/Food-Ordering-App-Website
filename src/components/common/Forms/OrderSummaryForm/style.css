@@ -1,0 +1,329 @@
+.order_summary_form{
+    width: 100%;
+    height: calc(100vh - 50px);
+    margin: 25px 0px;
+    overflow:visible;
+}
+
+.order_summary_form > form{
+    width: 75%;
+    width: 1400px;
+    height: calc(100vh - 50px);
+    margin: auto;
+   
+    display: flex;
+    column-gap: 30px;
+}
+
+
+
+.form__left_column{
+    width: 1000px;
+    overflow-y: scroll;
+
+    /* Hide scrollbar */
+    -ms-overflow-style: none;
+    scrollbar-width: none;  
+}
+
+ /* Hide scrollbar for Chrome, Safari and Opera */
+ .form__left_column::-webkit-scrollbar {
+    display: none;
+}
+
+.form__right_column{
+    width: 350px;
+    height: calc(95vh - 50px);
+    padding: 0px var(--default_padding);
+    position: relative;
+    overflow-y: scroll;
+
+    /* Hide scrollbar */
+    -ms-overflow-style: none;
+    scrollbar-width: none;  
+
+    border-left: 1px solid #eaeef1;
+}
+
+ /* Hide scrollbar for Chrome, Safari and Opera */
+.form__right_column::-webkit-scrollbar {
+    display: none;
+}
+
+
+.form__left_column > nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    padding-top: 15px;
+    margin-bottom: 50px;
+}
+
+.form__left_column > nav > h2{
+    font-size: 27px;
+    font-weight: 500;
+}
+
+.form__left_column > main{
+   
+    padding: 0px 25px 0px 75px;
+    
+}
+
+
+
+
+/*  ----- ORDER SUMMARY - INPUTS GROUP ----- */
+
+.order_summary_form__inputs_group{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 15px;
+    column-gap: 15px;
+    justify-content: space-between;
+}
+
+.order_summary_form__inputs_group > span{
+    width: calc(50% - 15px);
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.order_summary_form__inputs_group > span > label{
+    font-size: 15px;
+    margin-left: 1px;
+}
+
+.order_summary_form__inputs_group > span > input{
+    height: 40px;
+    font-size: 17px;
+    color: var(--secondary_color);
+    
+    padding: 0;
+    margin: 0;
+    border: 0;
+    margin-bottom: 10px;
+    padding: 0px 20px;
+
+    background: #FFFFFF;
+    box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.15);
+    /* border: 1px solid rgba(0, 0, 0, 0.15); */
+    border-radius: 5px;
+}
+
+/*  ----- COMMENTS TO ORDER ----- */
+.comments_to_order{
+
+}
+
+.comments_to_order > textarea{
+    width: calc(100% - 30px);
+    height: 140px;
+
+    padding: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+
+    resize: none;
+
+
+}
+
+
+/*  ----- PAYMENT METHODS ----- */
+
+.payment_methods{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 20px;
+    row-gap: 25px;
+}
+
+.payment_methods > button{
+    height: 150px;
+    width: 200px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid  rgb(121, 121, 121);
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.payment_methods > button > svg{
+    margin-right: 10px;
+}
+
+.payment_methods > button:hover{
+    border: 1px solid var(--accent_color);
+}
+
+.payment_methods > button[is_active='true']{
+    color: var(--accent_color);
+    border: 2px solid var(--accent_color);
+}
+
+.payment_methods > button[is_active='false']{
+    color: rgb(0, 0, 0);
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1480px){
+    .order_summary_form > form{
+        width: 95%;
+    }
+
+    .form__left_column {
+        width: calc(100% - 350px);
+    }
+
+   
+}
+
+
+/* from Desktop to Mobile */
+/* DESKTOP VERSION */
+@media only screen and (max-width: 1250px){
+    .order_summary_form__inputs_group > span{
+        width: calc(100%);
+    }
+}
+
+@media only screen and (max-width: 1180px){
+
+    .payment_methods{
+        justify-content: space-around;
+    }
+
+   
+}
+
+@media only screen and (max-width: 1100px){
+
+    .form__left_column > main{
+   
+        padding: 0px 25px;
+        
+    }
+}
+
+@media only screen and (max-width: 1000px){
+
+    .payment_methods > button{
+        height: 100px;
+        width: 150px;
+    }
+
+}
+
+
+/* MOBILE VERSION */
+@media only screen and (max-width: 850px){
+
+    
+    .order_summary_form{
+        width: calc(90%);
+        height: unset;
+        padding: 0px;
+
+        padding-bottom: 50px;
+        margin: 25px auto;
+    }
+
+    .order_summary_form > form{
+        width: 100%;
+        height: unset;
+        flex-direction: column;
+        column-gap: unset;
+
+    }
+
+    .form__left_column{
+        width: unset;
+        height: unset;
+        padding: 0px var(--default_padding);
+        padding-bottom: 50px;
+        overflow-y: unset;
+    }
+
+
+    .form__right_column{
+        width: unset;
+        height: unset;
+        padding: 0px var(--default_padding);
+        overflow-y: unset;
+        position: unset;
+        border: 0px;
+    }
+
+    .form__left_column > main,
+    .form__left_column > nav{
+   
+        padding: 0px
+        
+    }
+
+}
+
+
+@media only screen and (max-width: 650px){
+
+    
+    .order_summary_form{
+        width: calc(100%);
+        height: unset;
+
+    }
+
+}
+
+
+@media only screen and (max-width: 500px){
+
+    .form__left_column > nav > h2{
+        font-size: 20px;
+    
+    }
+
+}
+
+
+
+
+
+@media only screen and (max-width: 350px){
+
+    .payment_methods{
+        column-gap: 15px;
+        row-gap: 20px;
+    }
+
+    .payment_methods > button{
+        height: 80px;
+        width: 120px;
+    }
+
+
+}
+
+
+

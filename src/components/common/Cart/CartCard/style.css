@@ -1,0 +1,124 @@
+
+.cart_card{
+    width: calc(100% - 30px);
+    padding: 15px;
+    margin-bottom: 17px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: -4px -4px 10px rgba(0, 0, 0, 0.05), 4px 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+}
+
+.cart_card__image{
+
+}
+
+.cart_card__image > img{
+    width: 80px;
+    height: auto;
+}
+
+.cart_card__order_summary{
+    width: calc(100% - 80px - 35px);
+}
+
+.cart_card__order_summary__row{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart_card__dish_name{
+    width: 130px;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 25px;
+    color: var(--primary_color);
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden; 
+}
+
+.cart_card__delete_order{
+    color: var(--accent_color);
+    display: flex;
+}
+
+.cart_card__dish_size{
+    color: var(--secondary_color);
+    margin-bottom: 20px;
+}
+
+
+.cart_card__order_summary__dish_counter{
+    
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #F2F5F8;
+    box-sizing: border-box;
+    border-radius: 3px;
+   
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 25px;
+    color: vrr(--primary_color);
+}
+
+.cart_card__dish_counter__button{
+
+}
+
+.cart_card__dish_counter__label{
+    width: 45px;
+    text-align: center;
+}
+
+
+.cart_card__order_summary__price{
+
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 25px;
+    color: vrr(--primary_color);
+
+}
+
+
+.cart_subpage__empty_cart{
+    margin: 20px 0px 30px 0px;
+}
+
+.cart_subpage__empty_cart > h1{
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.cart_subpage__empty_cart > h4{
+    font-weight: 400;
+    font-size: 16px;
+}
+
+/* MOBILE MEDIA QUERIES */
+@media only screen and (min-width: 700px) {
+    .cart_card{
+        width: calc(100% - 30px);
+        width: 44%;
+    }
+}
+
+
+
+/* DESKTOP MEDIA QUERIES */
+@media only screen and (min-width: 850px) {
+    .cart_card{
+        width: calc(100% - 30px);
+    }
+}
+

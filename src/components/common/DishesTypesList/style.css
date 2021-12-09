@@ -1,0 +1,28 @@
+.dishes_types_list{
+    width: 100%;
+   
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 25px;
+    
+}
+
+
+/* MOBILE MEDIA QUERIES */
+
+@media only screen and (min-width: 400px){
+    
+}
+
+
+
+/* DESKTOP MEDIA QUERIES */
+
+@media only screen and (min-width: 850px){
+    .dishes_types_list{
+        display: flex;
+        justify-content: flex-start;
+    }
+
+}

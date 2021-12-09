@@ -1,0 +1,9 @@
+.mobile_page{
+    
+}
+
+.mobile_page__content{
+    padding: 0px 15px;
+    padding-bottom: var(--nav_height);
+}
+

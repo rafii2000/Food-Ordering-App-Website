@@ -1,0 +1,17 @@
+.top_bar{
+    width: calc(100% - 30px); 
+    height: 66px;
+    padding: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top_bar__middle{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    color: #000000;
+}

@@ -1,0 +1,18 @@
+/* Style takie same jak dla Page tylko inne nazwy klas*/
+
+.subpage{
+    
+}
+
+.subpage__content{
+    /* padding: 0px 15px; */
+    /* padding-bottom: var(--nav_height); */
+}
+
+.subpage__fake_content{
+
+    font-size: 40px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 150px;
+}

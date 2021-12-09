@@ -1,0 +1,134 @@
+
+.navigation{
+    width: calc(100% - 40px); 
+    height: var(--nav_height);
+    padding: 0px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    position: fixed;
+    bottom: 0px;
+    z-index: 10;
+
+    box-shadow: -6px -6px 30px rgba(67, 93, 107, 0.25), 6px 6px 30px rgba(67, 93, 107, 0.25);
+    background-color: var(--primary_background);
+}
+
+.navigation__button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 6px;
+    cursor: pointer;
+    position: relative;
+   
+    color: var(--secondary_color--light);
+    fill: var(--secondary_color--light);
+    stroke: var(--secondary_color--light);
+}
+
+
+.navigation__button__icon,
+.navigation__button__icon > svg,
+.navigation__button__icon > svg > path{
+    fill: inherit;
+    stroke: inherit;
+}
+
+.navigation__button--active{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 6px;
+    cursor: pointer;
+    position: relative;
+   
+    color: var(--secondary_color--light);
+    fill: var(--secondary_color--light);
+    stroke: var(--secondary_color--light);
+
+    /* active styles */
+    color: var(--accent_color);
+    fill: var(--accent_color);
+    stroke: var(--accent_color);
+}
+
+.navigation__button__label{
+    
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: -0.24px;
+}
+
+
+.cartOrderSize{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 13px;
+    color: white;
+    background-color: #667C8A;
+    border-radius: 50%;   
+    
+    position: absolute;
+    top: 7px;
+    right: -10px;
+}
+
+
+
+
+
+@media only screen and (min-width: 500px) {
+    .navigation{
+        justify-content: space-around;
+    }
+}
+
+
+
+@media only screen and (min-width: 850px){
+    .navigation{
+        width: auto;
+        height: auto;
+        margin: 100px 0px;
+        padding: 0px 15px;
+                
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    
+        position: unset;
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+    .navigation__button,
+    .navigation__button--active{
+        margin: 30px 0px;
+    }
+
+    .navigation:last-child{
+        margin-bottom: 0px
+    }
+
+}
+
+
+
+@media only screen and (max-height: 350px){
+    .navigation{
+        display: none;
+    }
+}
+
+
+

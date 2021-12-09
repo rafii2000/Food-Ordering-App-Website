@@ -1,0 +1,123 @@
+.cart{
+    
+    /* padding: 0 var(--default_padding); */
+    padding-bottom: 30px;
+} 
+
+.cart__cards_list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+/* ---- CART COUPON CODE ---- */
+
+.cart__coupon_code{
+    width: calc(100% - 30px);
+    height: 30px;
+    padding: 3px 15px;
+    margin-bottom: 17px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: -4px -4px 10px rgba(0, 0, 0, 0.05), 4px 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    /* border: 1px solid var(--secondary_color--light); */
+
+    /* background-color: rgba(55, 205, 50, 0.698); */
+    border-color: rgba(55, 205, 50, 0.698);
+    border: 1px solid rgba(55, 205, 50, 0.698); 
+    border: 1px solid transparent; 
+}
+
+.cart__coupon_code[isCouponValid='0']{
+    border-color: transparent;
+}
+
+.cart__coupon_code[isCouponValid='1']{
+    border-color: rgba(55, 205, 50, 0.698);
+}
+
+.cart__coupon_code[isCouponValid='-1']{
+    border-color: rgba(205, 50, 50, 0.698);
+}
+
+.cart__coupon_code > input{
+    width: calc(80% - 24px);
+    font-size: 14px;
+    line-height: 20px;
+    border: 0px;
+    padding: 2px 5px;
+    background-color: transparent;
+}
+
+.cart__coupon_code > button{
+    display: flex;
+    border: 0px;
+    margin: 0;
+    padding: 10px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
+
+/* ---- CART ORDER SUMMARY ---- */
+
+.cart__order_summary{
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #F2F5F8;
+    margin-top: 24px;
+}
+
+.cart__order_summary__row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 17px;
+}
+
+.cart__order_summary__label{
+  
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 23px;
+    letter-spacing: -0.3px;
+    color: var(--secondary_color--light);
+}
+
+.cart__order_summary__price{
+  
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 23px;
+    letter-spacing: -0.3px;
+    color: var(--primary_color);
+}
+
+.cart__order_summary__total_row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 27px;
+    margin-bottom: 40px;
+
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    letter-spacing: -0.3px;
+    color: var(--primary_color);
+}
+
+@media only screen and (min-width: 700px) {
+    
+}
+
+
+
+  

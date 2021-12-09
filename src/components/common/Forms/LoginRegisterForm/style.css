@@ -1,0 +1,148 @@
+
+
+.login_form{
+
+    width: inherit;
+    height: inherit;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_form > form{
+    width: 450px;
+    max-width: 450px;
+    height: auto;
+    margin: 0px auto;
+    padding: 25px 50px;
+    border-radius: 15px;
+    background-color: #FFF;
+    box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.15);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login_form > form > h2{
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.login_form > form > .serverMessage{
+    
+    font-size: 18px;
+    margin: 30px 0 0px 0;
+}
+
+
+
+
+.login_form > form > label{
+    width: 100%;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.login_form > form > input{
+    width: calc(100% - 20px);
+    height: 40px;
+    font-size: 17px;
+    color: var(--secondary_color);
+    
+    padding: 0;
+    margin: 0;
+    border: 0;
+    margin-bottom: 10px;
+    padding: 0px 10px;
+
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+}
+
+.login_form > form > button{
+    
+    color: var(--primary_color--light);
+    background-color: var(--accent_color);
+  
+    border: 1px solid var(--accent_color);
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 25px;
+    padding: 8px 65px;
+
+}
+
+.login_form > form > a{
+    color: var(--accent_color);
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.login_form > form > span{
+    color: rgba(0, 0, 0, 0.45);
+    font-size: 13px;
+    text-align: center;
+}
+
+.login_form > form > span > a{
+    color: var(--accent_color);
+    margin-left: 4px;
+}
+
+.login_form > form > a:first-of-type{
+    align-self: flex-end;
+}
+
+.break_line{
+    width: 100%;
+    margin: 25px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.45);
+}
+.break_line > span{
+    width: 30%;
+    height: 0px;
+    margin: 10px;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+
+/* mobile */
+@media only screen and (max-width: 850px){
+    .login_form > form{
+        padding: 25px 0px;
+        box-shadow: none;
+    }
+
+   
+}
+
+@media only screen and (max-width: 500px){
+    .login_form > form{
+        width: calc(90%);
+       
+    }
+}
+
+@media only screen and (max-width: 475px){
+    .login_form > form{
+        
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .login_form > form{
+               
+    }
+}
+
+
+
