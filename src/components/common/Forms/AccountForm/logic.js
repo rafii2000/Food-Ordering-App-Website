@@ -25,6 +25,8 @@ export function useAccountForm(){
     const [editAccount, setEditAccountFlag] = useState(!false)
     const [editContact, setEditContactFlag] = useState(!false)
     const [editDelivery, setEditDeliveryFlag] = useState(!false)
+    const [updateResult, setUpdateResult] = useState({status: '', message: ''})
+
 
     const {isLogged, userID, userAccountData, userCachedData, setUserAccountData, setUserCachedData} = useContext(UserContext)
 
@@ -145,8 +147,16 @@ export function useAccountForm(){
 
                 //update data in database
                 axios.put(`/api/users/${userID}`,  {userID: userID, data: newUserData})
-                .then(res => console.log(res.data)) //TODO: show modal message on success
-                .catch(err => console.log(err))     //TODO: show modal message on error
+                .then(res => {
+                    //show modal message on success
+                    console.log(res.data)
+                    setUpdateResult({status: res.data.status, message: res.data.message, id: Math.random()})
+                })
+                .catch(err => {
+                    //show modal message on error
+                    //console.log(err)
+                    setUpdateResult({status: err.data.status, message: err.data.message, id: Math.random()})
+                })
 
                 break;
 
@@ -181,8 +191,16 @@ export function useAccountForm(){
                         }
 
                         axios.put(`/api/users/${userID}/password`, requestData)
-                        .then(res => console.log(res.data)) //TODO: show message on success
-                        .catch(err => console.log(err))     //TODO: show message on error
+                        .then(res => {
+                            //show message on success
+                            //console.log(res.data)
+                            setUpdateResult({status: res.data.status, message: res.data.message, id: Math.random()})
+                        })
+                        .catch(err => {
+                            //show message on error
+                            //console.log(err)
+                            setUpdateResult({status: err.data.status, message: err.data.message, id: Math.random()})
+                        })     
                     }
                     else{
                         reset(formValues())
@@ -193,20 +211,22 @@ export function useAccountForm(){
                 if(userAccountData.email !== newCredentials.email){
                                         
                     axios.put(`/api/users/${userID}/email`, {email: newCredentials.email})
-                        .then(res => console.log(res.data)) //TODO: show message on success
-                        .catch(err => console.log(err))     //TODO: show message on error
+                        .then(res => setUpdateResult({status: res.data.status, message: res.data.message, id: Math.random()})) 
+                        .catch(err => setUpdateResult({status: err.data.status, message: err.data.message, id: Math.random()}))     
                 }
 
                 //update email in userContext
                 newUserData.email = newCredentials.email
-                setUserAccountData(newUserData) //order is important, setUserAccountData(newUserData) operation, must be after if statement
+                const deepCopy = JSON.parse(JSON.stringify(newUserData))
+                setUserAccountData(deepCopy) //order is important, setUserAccountData(newUserData) operation, must be after if statement
 
                 break;
 
             case false:
 
                 newUserData.email = newCredentials.email
-                setUserCachedData(newUserData) //update data in userContext
+                const deepCopy2 = JSON.parse(JSON.stringify(newUserData))
+                setUserCachedData(deepCopy2) //update data in userContext
                 updateUserDataInLocalStorage(newUserData) //update data in localStorage
                 break;
         
@@ -216,7 +236,7 @@ export function useAccountForm(){
 
     }
 
-
+    
 
     return{
 
@@ -224,6 +244,7 @@ export function useAccountForm(){
         editAccount: editAccount,
         editContact: editContact,
         editDelivery: editDelivery,
+        updateResult: updateResult,
         setEditAccountFlag,
         setEditContactFlag,
         setEditDeliveryFlag,

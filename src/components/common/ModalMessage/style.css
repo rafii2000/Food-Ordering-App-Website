@@ -1,0 +1,73 @@
+
+.modal-message{
+
+    padding: 15px 30px 15px 15px;
+    position: relative;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    z-index: 1000;
+    border-radius: 5px;
+
+    position: fixed;    /* or absolute */
+    top: -20px;
+
+    opacity: 0;
+
+    transition: opacity 1s, transform 1s;
+
+}
+
+.modal-message > svg{
+
+   position: absolute;
+   top: 5px;
+   right: 5px;
+   color: white;
+   font-size: 21px;
+   cursor: pointer;
+}
+
+.modal-message > svg:hover{
+
+    font-size: 23px;
+    background-color: rgba(255, 255, 255, 0.219);
+}
+
+
+
+.modal-message--mobile{
+
+    width: calc(100% - 30px - 15px - 20px - 20px);
+    left: 20px;
+}
+
+.modal-message--desktop{
+
+    width: 400px;
+    left: calc(50% - 200px);
+}
+
+
+.modal-message--success{
+    background-color: rgb(0, 206, 27);
+}
+
+.modal-message--error{
+    /* background-color: rgb(211, 0, 0); */
+    background-color: var(--accent_color);
+}
+
+
+.modal-message--fade-in{
+    opacity: 1;
+    transform: translateY(40px);
+}
+
+.modal-message--fade-out{
+    opacity: 0;
+    transform: translateY(-40px);
+}
+
+  
+

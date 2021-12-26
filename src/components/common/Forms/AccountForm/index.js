@@ -5,6 +5,7 @@ import { useAccountForm } from './logic';
 import LogOutButton from '../../Buttons/LogOutButton'
 import UserNotLoggedPrompt from '../../UserNotLoggedPrompt';
 import Space from '../../Space';
+import ModalMessage from '../../ModalMessage';
 
 import './style.css'
 
@@ -17,13 +18,19 @@ export default function AccountForm() {
     const {
         isLogged, //userContext
         register, //useForm
-        formGroupsEnum, edit, close, save, saveCredentials, //hookFunction
-        editAccount, editContact, editDelivery, //hookStates
+        formGroupsEnum, edit, close, save, saveCredentials, //hook functions
+        editAccount, editContact, editDelivery, updateResult //hook states
     } = useAccountForm()
         
     return (
        
         <div className='account_form'>
+
+            <ModalMessage
+                status={updateResult.status}
+                message={updateResult.message}
+                id={updateResult.id}
+            />
 
             <form>
 
