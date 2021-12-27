@@ -1,52 +1,83 @@
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useCallback, useRef } from "react"
 import { useHistory } from 'react-router-dom'
 import axios from "axios"
-import * as uuid from 'uuid';
 
 
 export function useOrderStatus() {
     
+        
     const history = useHistory()
-    const orderID = uuid.v4()
+    const [historyState, setHistoryState] = useState(history.location.state) //waiting || accepted || canceled
     const [orderStatus, setOrderStatus] = useState('waiting') //waiting || accepted || canceled
+    const orderID = useRef()
 
-    if(!history.location.state){
-        history.push('/')
-    }
 
-    console.log('location.state:', history.location.state)
-    
-
-    const sendNewOrder = () => {
-
-        axios.post('/new-order')
-        .then(res => {})
-        .catch(err => {console.log(err.data)}) //TODO: handle error
-    }
-
-    const checkOrderStatus = () => {
-        axios.get(`/accepted-orders/${orderID}`)
-        .then(res => {
+    const checkOrderStatus = useCallback(
+        async () => {
             
-            setOrderStatus(res.data.data)
+            const response = await axios.get(`/api/order/${orderID.current}/status`).catch(err => {console.log(err.data)}) //TODO: handle error
+            
+            if(response.data.data.status === 'waiting'){
+                setTimeout(checkOrderStatus, 5000)
+            }
+            else{
+                setOrderStatus(response.data.data.status)
+            }
+        },
+        [],
+    )
 
-        })
-        .catch(err => {console.log(err.data)}) //TODO: handle error
-    }
 
+    const sendNewOrder = useCallback(
+        async () => {
 
-    //const orderStatusInterval = setInterval(checkOrderStatus, 5000)
-
-
-
-    useEffect(() => {
+            if(!historyState) return
+            if(orderStatus !== 'waiting') return
+            if(orderID.current) return
                
+            const data = {
+                userData: historyState.userData,
+                userOrder: historyState.userOrder,
+            }
+
+            //history.replace({ state: undefined })
+            //window.history.replaceState(undefined, '')
+
+            const response = await axios.post('/api/new-order', data).catch(err => {console.log(err.data)}) //TODO: handle error
+            
+            
+            if(response.data.status === 'success'){
+                orderID.current = response.data.data.orderID
+                checkOrderStatus()
+            }
+            else{
+                //TODO: handle status === error
+            }
+
+            
+        },
+        [checkOrderStatus, orderStatus, historyState],
+    )
+    
+    useEffect(() => {
+
+        //call once at the beginning
+        console.log('useOrderStatus useEffect')
+        if(!history.location.state && !orderID.current){
+            console.log(history.location)
+            console.log(orderID.current)
+            history.push('/')
+        }
+
+        history.replace({ state: undefined })
+        sendNewOrder()
+
         //cleanup
         return () => {
-            
+            console.log('canceled order: ', orderID.current)
         }
-    }, [])
+    }, [sendNewOrder, history])
 
     
     return {

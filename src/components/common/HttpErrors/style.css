@@ -24,7 +24,8 @@
     margin-bottom: 50px;
 }
 
-.http_error > section > a{
+.http_error > section > a,
+.http_error > section > button{
     font-family: 'Poppins', sans-serif;
     background-color: var(--accent_color);
     color: white;
@@ -35,7 +36,8 @@
     cursor: pointer;  
 }
 
-.http_error > section > a > svg{
+.http_error > section > a > svg,
+.http_error > section > button > svg{
     
     color: white;
 }
