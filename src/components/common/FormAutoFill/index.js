@@ -3,8 +3,6 @@ import { useState, useContext } from 'react'
 
 import UserContext from '../../../contexts/user'
 
-
-
 import {BsQuestionCircle} from 'react-icons/bs'
 
 import './style.css'

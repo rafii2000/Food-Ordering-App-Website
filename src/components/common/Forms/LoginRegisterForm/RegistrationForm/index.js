@@ -1,39 +1,14 @@
 import React from 'react'
-import { useForm } from "react-hook-form";
-import { useState } from 'react';
 
 import { Link } from 'react-router-dom';
-
-import axios from 'axios';
+import useRegistrationForm from './logic';
 
 import '../style.css'
 
 export default function RegistrationForm(){
-
-    const {register, handleSubmit} = useForm()
-    const [formMessage, setFormMessage] = useState({})
-
-    const onSuccess = (data) => {
-        console.log('Data sends to server', data)
-        
-        //TODO: validation
-        if(data.email === '' || data.password === ''){
-            setFormMessage({status: 'error', message: 'Email or Password are invalid'})
-            return
-        }
-        else if(data.password !== data.repeatPassword){
-            setFormMessage({status: 'error', message: 'Passwords are different'})
-            return
-        }
-
-        
-        axios.post('/api/signin', data)
-        .then(res => {
-            setFormMessage(res.data)
-        })
-        .catch(err => console.log(err))
-    }
-
+    
+    const { register, handleSubmit, onSuccess, formMessage, errors } = useRegistrationForm()
+    
     return(
        
         <div className='login_form'>
@@ -47,15 +22,17 @@ export default function RegistrationForm(){
                     </div>
                 }
                 
-
-                <label>Email</label>
-                <input  {...register('email')} ></input>
+                <label>E-mail</label>
+                <input {...register('email')} error={errors.email ? 'true' : 'false'}></input>
+                <p>{errors.email ? errors.email.message : ''}</p>
                 
                 <label>Password</label>
-                <input  type='password' {...register('password')}></input>
+                <input type='password' {...register('password1')} error={errors.password1 ? 'true' : 'false'}></input>
+                <p>{errors.password1 ? errors.password1.message : ''}</p>
 
                 <label>Repeat Password</label>
-                <input  type='password' {...register('repeatPassword')}></input>
+                <input type='password' {...register('password2')} error={errors.password2 ? 'true' : 'false'}></input>
+                <p>{errors.password2 ? errors.password2.message : ''}</p>
 
                 <Link to='#'></Link>
                         

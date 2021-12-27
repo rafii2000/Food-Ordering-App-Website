@@ -54,12 +54,27 @@
     padding: 0;
     margin: 0;
     border: 0;
-    margin-bottom: 10px;
     padding: 0px 10px;
 
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 5px;
+}
+
+
+.login_form > form > input[error = 'true']{
+    border-color: red;
+}
+
+.login_form > form > p{
+    width: 100%;
+    font-size: 12px;
+    margin-top: 3px;
+    margin-bottom: 10px;
+    text-align: left;
+    line-height: 12px;
+    height: 12px;
+    color: red;
 }
 
 .login_form > form > button{
@@ -76,6 +91,9 @@
     padding: 8px 65px;
 
 }
+
+
+
 
 .login_form > form > a{
     color: var(--accent_color);
