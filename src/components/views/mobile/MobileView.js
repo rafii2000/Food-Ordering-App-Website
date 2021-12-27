@@ -16,6 +16,7 @@ import LoginAndRegister from './LoginAndRegister';
 
 //components
 import OrderSummary from '../../common/Forms/OrderSummaryForm';
+import OrderStatus from '../../common/OrderStatus';
 import NotFound404 from '../../common/HttpErrors/NotFound404';
 
 
@@ -33,7 +34,8 @@ export default function MobileLayout() {
         <Route path='/favorites' component={Favorites}></Route>
         <Route exact path='/cart' component={Cart}></Route>
         <Route path='/order-summary' component={OrderSummary}></Route>
-
+        <Route path='/order-status' component={OrderStatus}></Route>
+        
         {/* subpages */}
         <Route exact path='/login' component={LoginAndRegister}></Route>
         <Route exact path='/registration' component={LoginAndRegister}></Route>

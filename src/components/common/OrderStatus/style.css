@@ -1,0 +1,152 @@
+.order-status{
+
+    display: flex;
+    flex-direction: column;
+    padding: 0px 12px;
+    margin-top: 20vh;
+
+    
+    text-align: center;
+    align-items: center;
+}
+
+
+.order-status > h1{
+
+    font-size: 35px;
+    font-weight: 400;
+    
+}
+
+.order-status > h2{
+
+    font-size: 27px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.order-status > p{
+
+    font-size: 17px;
+    margin-bottom: 10px;
+    
+}
+
+.order-status > svg{
+
+    font-size: 120px;
+    color: var(--accent_color);
+    fill: var(--accent_color);
+    stroke: var(--accent_color);
+    margin-bottom: 35px;
+}
+
+
+.order-status > a{
+
+    margin-top: 50px;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--accent_color);
+    color: white;
+    padding: 10px 50px;
+    font-size: 16px;    
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;  
+    
+}
+
+
+
+
+
+
+.order-status--answer{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 25px 15px;
+    border: 1px solid rgb(185, 185, 185);
+    border-radius: 15px;
+
+}
+
+.order-status--answer > h3{
+
+    width: 100%;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 55px;
+}
+
+.order-status--answer > div:nth-of-type(1){
+
+    
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.order-status--answer > div:nth-of-type(1) > h2{
+
+    padding-top: 20px;
+    padding-right: 50px;
+    font-size: 45px;
+}
+
+.order-status--answer > div:nth-of-type(1) > h2[order_status = 'accepted']{
+    color: rgb(39, 236, 0);
+}
+
+.order-status--answer > div:nth-of-type(1) > h2[order_status = 'canceled']{
+   color: rgb(241, 0, 0);
+}
+
+
+.order-status--answer > div:nth-of-type(2) > svg{
+
+    font-size: 120px;
+    /* stroke: var(--accent_color); */
+}
+
+.order-status--answer > div:nth-of-type(2) > svg[order_status = 'accepted']{
+
+    font-size: 120px;
+    stroke: rgb(26, 156, 0);
+}
+
+.order-status--answer > div:nth-of-type(2) > svg[order_status = 'canceled']{
+
+    font-size: 120px;
+    stroke: rgb(207, 0, 0)
+}
+
+
+
+
+
+.order-status--answer > p{
+
+    width: 100%;
+    text-align: center;
+    font-size: 17px;
+    margin-top: 25px;
+    
+
+}
+
+
+/* for mobile */
+@media only screen and (max-width: 500px){
+
+    .order-status--answer > div:nth-of-type(1){
+        width: 100%;
+    }
+
+    .order-status--answer > div:nth-of-type(1) > h2{
+        padding-top: 0px;
+        padding-right: 0px;
+    }
+}

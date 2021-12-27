@@ -127,7 +127,7 @@ export const useCart = () => {
             //hide cancel coupon button on Apply Coupon click
             couponDivRef.current.children[1].style['display'] = 'none'
 
-            //API request 
+            //mock API request 
             setTimeout( () => {
 
                 if(!couponDivRef.current) return

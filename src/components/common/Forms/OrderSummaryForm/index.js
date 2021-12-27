@@ -1,6 +1,7 @@
 import React from 'react'
 import { useContext, useState, useEffect } from "react";
 import { useForm } from 'react-hook-form';
+import { useHistory } from 'react-router-dom';
 
 
 import UserContext from '../../../../contexts/user';
@@ -26,6 +27,7 @@ export default function OrderSummary() {
 
     console.log('OrderSummary rerender')
 
+    const history = useHistory()
     const {userOrder, orderSize, getCoupon} = useContext(UserOrderContext)
     const {userAccountData, userCachedData, userInputtedData, setUserInputtedData} = useContext(UserContext)
     
@@ -37,9 +39,20 @@ export default function OrderSummary() {
 
     const submitPaymentForm = (data) => {
 
+
+        //TODO: validation
+
         console.log("Payment-Form Data: ", data)
         console.log("User-Order Data: ", userOrder)
         console.log("Discount-Coupon: ", getCoupon())
+
+        const state = {
+            userData: data,
+            userOrder: userOrder,
+            coupon: getCoupon(),
+        }
+
+        history.push('/order-status', state)
 
     }
 
@@ -181,7 +194,7 @@ export default function OrderSummary() {
                             <div className='payment_methods' >
 
                                 <div style={{width: '100%', height: '0px', overflow: 'hidden'}}>
-                                    <input type='' {...register('paymentMethod', {required: true})}></input>
+                                    <input type='button' {...register('paymentMethod', {required: true})}></input>
                                 </div>
                                 
                                 <button type='button' is_active={paymentMethod === 'blik' ? 'true' : 'false'}
