@@ -4,7 +4,6 @@ import { useContext } from 'react'
 import UserContext from '../../../../contexts/user'
 
 import Page from '../../../layouts-templates/mobile/Page'
-import Space from '../../../common/Space'
 import NamedSection from '../../../layouts-templates/NamedSection'
 import DishesTypesList from '../../../common/DishesTypesList'
 import DishesGridList from '../../../common/DishesGridList'
@@ -19,19 +18,17 @@ export default function Favorites() {
         <Page>
            
            {/* TOP BAR */}
-           {isLogged ? <Space height='20px'/> : <UserNotLoggedPrompt/>}
+           {isLogged ? <></> : <UserNotLoggedPrompt/>}
 
             {/* CONTENT   */}
             <>                
-                <div className='home_page__dishes_types_list'>
-                    <DishesTypesList></DishesTypesList>
-                </div>
+                                
+                <DishesTypesList></DishesTypesList>
                 
-                <div className='home_page__dishes_menu_list'>
-                    <NamedSection name='Favorites dishes' link='View all'>
-                        <DishesGridList type='fav_dishes'/>
-                    </NamedSection>
-                </div>
+                <NamedSection name='Favorites dishes' link='View all'>
+                    <DishesGridList type='fav_dishes'/>
+                </NamedSection>
+                
             </>
 
         </Page>

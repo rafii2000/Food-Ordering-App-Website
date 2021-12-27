@@ -4,7 +4,6 @@ import { useAccountForm } from './logic';
 
 import LogOutButton from '../../Buttons/LogOutButton'
 import UserNotLoggedPrompt from '../../UserNotLoggedPrompt';
-import Space from '../../Space';
 import ModalMessage from '../../ModalMessage';
 
 import './style.css'
@@ -45,8 +44,7 @@ export default function AccountForm() {
                         
                         {isLogged && 
                         <>  
-                            <Space height='35px'/>
-                            <label>New Password</label>
+                            <label style={{marginTop: '35px'}}>New Password</label>
                             <input  type='password' {...register('credentials.password')} disabled={editAccount}></input>
 
                             <label>Repeat Password</label>

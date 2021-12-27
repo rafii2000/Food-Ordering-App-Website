@@ -12,7 +12,6 @@ import FormAutoFill from '../../FormAutoFill';
 import ReturnButton from "../../Buttons/ReturnButton";
 import RectButton from '../../Buttons/BigRectButton';
 import Cart from "../../Cart";
-import Space from '../../Space';
 
 
 import {IoWalletSharp} from 'react-icons/io5'
@@ -119,77 +118,69 @@ export default function OrderSummary() {
 
                     <main>
 
-                        <NamedSection name='Contact details'>
+                        <NamedSection name='Contact details' mb={'35px'}>
                             <div className='order_summary_form__inputs_group'>
                                 <span>
                                     <label>First name</label>
-                                    <input {...register('firstName', {})}></input>
+                                    <input {...register('firstName', {required: true})}></input>
                                 </span>
 
                                 <span>
                                     <label>Last name</label>
-                                    <input {...register('lastName', {})}></input>
+                                    <input {...register('lastName', {required: true})}></input>
                                 </span>
 
                                 <span>
                                     <label>Phone</label>
-                                    <input {...register('phoneNumber', {})}></input>
+                                    <input {...register('phoneNumber', {required: true})}></input>
                                 </span>
 
                                 <span>
                                     <label>E-mail</label>
-                                    <input {...register('email', {})}></input>
+                                    <input {...register('email', {required: true})}></input>
                                 </span>
                             </div>
                         </NamedSection>
 
-                        <Space height='35px'/>
-
-                        <NamedSection name='Delivery address'>
+                        <NamedSection name='Delivery address' mb={'35px'}>
                             <div className='order_summary_form__inputs_group'>
                                 <span>
                                     <label>City</label>
-                                    <input {...register('city', {})}></input>
+                                    <input {...register('city', {required: true})}></input>
                                 </span>
 
                                 <span>
                                     <label>Street</label>
-                                    <input {...register('street', {})}></input>
+                                    <input {...register('street', {required: true})}></input>
                                 </span>
 
                                 <span>
                                     <label>Street number</label>
-                                    <input {...register('streetNumber', {})}></input>
+                                    <input {...register('streetNumber', {required: true})}></input>
                                 </span>
 
                                 <span>
                                     <label>Apartment number</label>
-                                    <input {...register('apartmentNumber', {})}></input>
+                                    <input {...register('apartmentNumber', {required: true})}></input>
                                 </span>
                             </div>
                         </NamedSection>
-
-                        <Space height='35px'/>
 
                         <FormAutoFill
                             autoFillFromCache={autoFillFromCache}
                             autoFillFromAccount={autoFillFromAccount}
                         ></FormAutoFill>
     
-                        <Space height='35px'/>
-
-                        <NamedSection name='Comments to order'>
+                        <NamedSection name='Comments to order' mb={'35px'} mt={'35px'}>
                             <div className='comments_to_order'>
                                 <textarea {...register('commentToOrder')}></textarea>
                             </div>               
                         </NamedSection>
 
-                        <Space height='35px'/>
-
-                        <NamedSection name='Payments methods'>
+                        <NamedSection name='Payments methods' mb={'35px'}>
                             <div className='payment_methods' >
                             
-                                <input type='hidden' {...register('paymentMethod')}></input>
+                                <input type='hidden' {...register('paymentMethod', {})}></input>
 
                                 <button type='button' is_active={paymentMethod === 'blik' ? 'true' : 'false'}
                                     onClick={() => {setValue('paymentMethod', 'blik'); setPaymentMethod('blik') }}
@@ -217,8 +208,6 @@ export default function OrderSummary() {
 
                             </div>
                         </NamedSection>
-
-                        <Space height='35px'/>
 
                         {window.device === 'desktop' && orderSize > 0 &&
                             <NamedSection name='Total order price'>
