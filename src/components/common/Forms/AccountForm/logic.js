@@ -38,7 +38,7 @@ export function useAccountForm(){
                 credentials: {
                     userID:             (userAccountData && userAccountData.userID)          ||  null,
                     email:              (userAccountData && userAccountData.email)           ||  null,
-                    password:           (userAccountData && userAccountData.password)        ||  null,
+                    password:           null,
                     repeatPassword:     null,
                 },
                
@@ -65,10 +65,7 @@ export function useAccountForm(){
             return {
 
                 credentials: {
-                    // userID:             (userCachedData && userCachedData.userID)           ||  null,
                     email:              (userCachedData && userCachedData.email)            ||  null,
-                    // password:           (userCachedData && userCachedData.password)         ||  null,
-                    // repeatPassword:     null,
                 },
                 
                 userData: {
@@ -149,7 +146,7 @@ export function useAccountForm(){
                 axios.put(`/api/users/${userID}`,  {userID: userID, data: newUserData})
                 .then(res => {
                     //show modal message on success
-                    console.log(res.data)
+                    //console.log(res.data)
                     setUpdateResult({status: res.data.status, message: res.data.message, id: Math.random()})
                 })
                 .catch(err => {
@@ -203,6 +200,7 @@ export function useAccountForm(){
                         })     
                     }
                     else{
+                        setUpdateResult({status: 'error', message: 'Passwords are different', id: Math.random()})
                         reset(formValues())
                     }
                 }

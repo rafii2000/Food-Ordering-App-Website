@@ -179,9 +179,11 @@ export default function OrderSummary() {
 
                         <NamedSection name='Payments methods' mb={'35px'}>
                             <div className='payment_methods' >
-                            
-                                <input type='hidden' {...register('paymentMethod', {})}></input>
 
+                                <div style={{width: '100%', height: '0px', overflow: 'hidden'}}>
+                                    <input type='' {...register('paymentMethod', {required: true})}></input>
+                                </div>
+                                
                                 <button type='button' is_active={paymentMethod === 'blik' ? 'true' : 'false'}
                                     onClick={() => {setValue('paymentMethod', 'blik'); setPaymentMethod('blik') }}
                                 >
