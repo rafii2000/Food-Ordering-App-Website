@@ -42,14 +42,18 @@ export default function OrderSummary() {
 
         //TODO: validation
 
-        console.log("Payment-Form Data: ", data)
-        console.log("User-Order Data: ", userOrder)
-        console.log("Discount-Coupon: ", getCoupon())
+        // console.log("Payment-Form Data: ", data)
+        // console.log("User-Order Data: ", userOrder)
+        // console.log("Discount-Coupon: ", getCoupon())
 
         const state = {
-            userData: data,
-            userOrder: userOrder,
-            coupon: getCoupon(),
+            orderDetails: {
+                userData: data,
+                userOrder: userOrder,
+            },
+
+            isOrderSent: false,
+            
         }
 
         history.push('/order-status', state)

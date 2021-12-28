@@ -44,7 +44,7 @@ export default function OrderStatus() {
                     <div className='order-status--answer'>
                         <div>
                             <h2 order_status={orderStatus}>
-                                {orderStatus === 'accepted' ? 'ACCEPTED' : 'CANCELED'}
+                                {orderStatus === 'accepted' ? 'ACCEPTED' : 'REJECTED'}
                             </h2>
                         </div>
 
@@ -53,9 +53,9 @@ export default function OrderStatus() {
                         </div>
                         
                         {orderStatus === 'accepted' ?
-                            <p>Your order has been accepted to processing</p>
+                            <p>Your order has been accepted to processing <br></br> We will deliver it as soon as possible</p>
                         :
-                            <p>Your order has been canceled. We are sorry for inconvenience</p>
+                            <p>Your order has been rejected because we have already reached maximum number of orders. <br></br> We are sorry for inconvenience</p>
                         }
                     </div>
 

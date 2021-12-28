@@ -100,7 +100,7 @@
     color: rgb(39, 236, 0);
 }
 
-.order-status--answer > div:nth-of-type(1) > h2[order_status = 'canceled']{
+.order-status--answer > div:nth-of-type(1) > h2[order_status = 'rejected']{
    color: rgb(241, 0, 0);
 }
 
@@ -117,7 +117,7 @@
     stroke: rgb(26, 156, 0);
 }
 
-.order-status--answer > div:nth-of-type(2) > svg[order_status = 'canceled']{
+.order-status--answer > div:nth-of-type(2) > svg[order_status = 'rejected']{
 
     font-size: 120px;
     stroke: rgb(207, 0, 0)
