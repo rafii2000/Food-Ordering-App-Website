@@ -44,7 +44,7 @@ export function useOrderStatus() {
             const response = await axios.post('/api/new-order', data).catch(err => {
                 setOrderStatus('error')
                 console.log(err.data)
-            }) //TODO: handle error
+            })
             
             
             if(response.data.status === 'success'){
@@ -56,7 +56,7 @@ export function useOrderStatus() {
                 history.replace({ state: {orderDetails:undefined, isOrderSent:true, orderID: response.data.data.orderID, orderStatus: 'waiting'} })
             }
             else{
-                //TODO: handle status === error
+                setOrderStatus('error')
             }
 
             
@@ -94,19 +94,13 @@ export function useOrderStatus() {
             sendNewOrder()
         }
 
-
-        //TODO: w przpadku odświezenia strony po zaakceptowaniu zamowienia przez restauracje, zamowienie jest anulowane
         //if user refresh page in waiting state, canceled order
         else if(history.location.state.isOrderSent === true && history.location.state.orderID){
             
             if(history.location.state.orderStatus === 'waiting'){
                 axios.put(`/api/order/${history.location.state.orderID}/canceled`)
             }
-            
-            // if(orderStatusRef.current === 'waiting'){
-            //     axios.put(`/api/order/${history.location.state.orderID}/canceled`)
-            // }
-
+        
             history.push('/')
         }
 
