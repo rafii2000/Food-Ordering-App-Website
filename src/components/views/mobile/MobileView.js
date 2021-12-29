@@ -11,7 +11,6 @@ import Account from './Account';
 //mobile views - subpages
 import Order from './Order';
 import Cart from './Cart';
-import Rate from './Rate'
 import LoginAndRegister from './LoginAndRegister';
 
 //components
@@ -40,7 +39,6 @@ export default function MobileLayout() {
         <Route exact path='/login' component={LoginAndRegister}></Route>
         <Route exact path='/registration' component={LoginAndRegister}></Route>
         <Route exact path='/order' component={Order}></Route>
-        <Route exact path='/rate' component={Rate}></Route>
 
         {/* errors */}
         <Route path='/' component={NotFound404}></Route>

@@ -108,7 +108,6 @@
 .order-status--answer > div:nth-of-type(2) > svg{
 
     font-size: 120px;
-    /* stroke: var(--accent_color); */
 }
 
 .order-status--answer > div:nth-of-type(2) > svg[order_status = 'accepted']{
