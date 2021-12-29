@@ -2,7 +2,6 @@ import React from 'react'
 
 //components: templates
 import DesktopPage from '../../../layouts-templates/desktop/DesktopPage'
-import NamedSection from '../../../layouts-templates/NamedSection'
 
 //components: common
 import DishesTypesList from '../../../common/DishesTypesList'
@@ -11,6 +10,7 @@ import HeroMessage from '../../../common/HeroMessage'
 import UserLocation from '../../../common/UserLocation'
 import DishesGridList from '../../../common/DishesGridList'
 import Cart from '../../../common/Cart/index'
+import NamedSection from '../../../common/NamedSection'
 
 import './style.css'
 

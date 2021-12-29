@@ -74,7 +74,7 @@ export function useOrderStatus() {
             console.log('cleanup()')
             if(orderStatusRef.current === 'waiting'){
                 if(orderID.current){
-                    axios.put(`/api/order/${orderID.current}/canceled`)
+                    axios.put(`/api/orders/${orderID.current}/canceled`)
                     history.push('/')
                 }
             }
@@ -98,7 +98,7 @@ export function useOrderStatus() {
         else if(history.location.state.isOrderSent === true && history.location.state.orderID){
             
             if(history.location.state.orderStatus === 'waiting'){
-                axios.put(`/api/order/${history.location.state.orderID}/canceled`)
+                axios.put(`/api/orders/${history.location.state.orderID}/canceled`)
             }
         
             history.push('/')
@@ -120,7 +120,7 @@ export function useOrderStatus() {
             //if user click 'back' in waiting state, canceled order
             if(orderStatusRef.current === 'waiting'){
                 if(orderID.current){
-                    axios.put(`/api/order/${orderID.current}/canceled`)
+                    axios.put(`/api/orders/${orderID.current}/canceled`)
                     history.push('/')
                 }
             }

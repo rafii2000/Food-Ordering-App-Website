@@ -7,6 +7,7 @@ import Home from './Home';
 import Favorites from './Favorites';
 import Account from './Account';
 import LoginAndRegister from './LoginAndRegister';
+import RestaurantPanel from './RestaurantPanel';
 
 //components
 import OrderSummary from '../../common/Forms/OrderSummaryForm';
@@ -30,9 +31,11 @@ export default function DesktopView() {
                 <Route path='/registration' component={LoginAndRegister}></Route>
                 <Route path='/order-summary' component={OrderSummary}></Route>
                 <Route path='/order-status' component={OrderStatus}></Route>
+                <Route path='/restaurant-panel' component={RestaurantPanel}></Route>
+                
 
                 {/* errors */}
-                <Route path='/' component={NotFound404}></Route>
+                {/* <Route path='/' component={NotFound404}></Route> */}
                     
             </Switch>
         </BrowserRouter>

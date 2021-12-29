@@ -3,7 +3,7 @@ import React from 'react'
 import { useOrder } from './logic'
 
 import Subpage from '../../../layouts-templates/mobile/Subpage'
-import TopBar from '../../../layouts-templates/TopBar'
+import TopBar from '../../../common/TopBar'
 import ReturnButton from '../../../common/Buttons/ReturnButton'
 import FavButton from '../../../common/Buttons/FavButton'
 import Content from './content'

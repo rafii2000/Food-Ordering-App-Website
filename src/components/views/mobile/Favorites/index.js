@@ -4,7 +4,7 @@ import { useContext } from 'react'
 import UserContext from '../../../../contexts/user'
 
 import Page from '../../../layouts-templates/mobile/Page'
-import NamedSection from '../../../layouts-templates/NamedSection'
+import NamedSection from '../../../common/NamedSection'
 import DishesTypesList from '../../../common/DishesTypesList'
 import DishesGridList from '../../../common/DishesGridList'
 import UserNotLoggedPrompt from '../../../common/UserNotLoggedPrompt'

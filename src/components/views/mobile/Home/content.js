@@ -5,7 +5,7 @@ import HeroMessage from '../../../common/HeroMessage'
 import SearchBar from '../../../common/SearchBar'
 import DishesTypesList from '../../../common/DishesTypesList'
 import DishesGridList from '../../../common/DishesGridList'
-import NamedSection from '../../../layouts-templates/NamedSection'
+import NamedSection from '../../../common/NamedSection'
 
 import './style.css'
 

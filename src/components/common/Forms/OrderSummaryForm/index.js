@@ -8,7 +8,7 @@ import UserContext from '../../../../contexts/user';
 import UserOrderContext from "../../../../contexts/user_order";
 
 
-import NamedSection from "../../../layouts-templates/NamedSection";
+import NamedSection from '../../NamedSection';
 import FormAutoFill from '../../FormAutoFill';
 import ReturnButton from "../../Buttons/ReturnButton";
 import RectButton from '../../Buttons/BigRectButton';

@@ -2,7 +2,7 @@ import React from 'react'
 import { useLocation } from 'react-router'
 
 import Subpage from '../../../layouts-templates/mobile/Subpage'
-import TopBar from '../../../layouts-templates/TopBar'
+import TopBar from '../../../common/TopBar'
 import ReturnButton from '../../../common/Buttons/ReturnButton'
 import MoreButton from '../../../common/Buttons/MoreButton'
 
