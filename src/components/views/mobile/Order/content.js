@@ -28,7 +28,7 @@ export default function Content() {
 
             <div className='order_subpage__dish_image'>
                 <div className='order_subpage__dish_image__background'>
-                    <img src={process.env.PUBLIC_URL+`assets/dishes_photos2/${dishType}/${dishDTO.dishID}/photo.png`} alt=''></img>
+                    <img src={process.env.PUBLIC_URL+`assets/dishes_photos/${dishType}/${dishDTO.dishID}/photo.png`} alt=''></img>
                 </div>
             </div>
 

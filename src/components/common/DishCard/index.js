@@ -28,7 +28,7 @@ export default function DishMenuCard({dishDTO, type}) {
                     
                     {<FavButton version={true} dishDTO={dishDTO} />}
                     
-                    <img src={process.env.PUBLIC_URL+`assets/dishes_photos2/${dishDTO.dishType}/${dishDTO.dishID}/photo.png`} alt=''
+                    <img src={process.env.PUBLIC_URL+`assets/dishes_photos/${dishDTO.dishType}/${dishDTO.dishID}/photo.png`} alt=''
                         onLoad={() => setImgLoading(false)}
                         style={imgLoading === true ? {opacity: '0'} : {opacity: '1'}}
                     ></img>

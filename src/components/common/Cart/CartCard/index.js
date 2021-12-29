@@ -17,7 +17,7 @@ export default function CartCard({size, amount, dishDTO}) {
         <div className='cart_card'>
 
             <div className='cart_card__image'>
-                <img src={process.env.PUBLIC_URL+`assets/dishes_photos2/${dishDTO.dishType}/${dishDTO.dishID}/photo.png`} alt=''></img>
+                <img src={process.env.PUBLIC_URL+`assets/dishes_photos/${dishDTO.dishType}/${dishDTO.dishID}/photo.png`} alt=''></img>
             </div>
 
             <div className='cart_card__order_summary'>

@@ -17,7 +17,7 @@ export function useOrderStatus() {
     const checkOrderStatus = useCallback(
         async () => {
             
-            const response = await axios.get(`/api/order/${orderID.current}/status`).catch(err => {console.log(err.data)}) //TODO: handle error
+            const response = await axios.get(`/api/orders/${orderID.current}/status`).catch(err => {console.log(err.data)}) //TODO: handle error
             
             if(response.data.data.status !== 'waiting'){
 
