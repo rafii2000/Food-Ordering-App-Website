@@ -8,11 +8,10 @@ export function useOrderStatus() {
     
         
     const history = useHistory()
-    //const [historyState, setHistoryState] = useState(history.location.state) //waiting || accepted || canceled
-    const [orderStatus, setOrderStatus] = useState('waiting') //waiting || accepted || canceled
+    const [orderStatus, setOrderStatus] = useState() // waiting || accepted || canceled
     const orderID = useRef()
     const intervalID = useRef()
-    const orderStatusRef = useRef('waiting')
+    const orderStatusRef = useRef()
     
 
     const checkOrderStatus = useCallback(
@@ -22,13 +21,15 @@ export function useOrderStatus() {
             
             if(response.data.data.status !== 'waiting'){
 
+                history.replace({ state: {orderDetails:undefined, isOrderSent:true, orderID: orderID.current, orderStatus: response.data.data.status} })
+
                 orderStatusRef.current = response.data.data.status
                 clearInterval(intervalID.current)
                 setOrderStatus(response.data.data.status)
             }
 
         },
-        [],
+        [history],
     )
 
 
@@ -40,14 +41,19 @@ export function useOrderStatus() {
                 userOrder: history.location.state.orderDetails.userOrder,
             }
             
-            const response = await axios.post('/api/new-order', data).catch(err => {console.log(err.data)}) //TODO: handle error
+            const response = await axios.post('/api/new-order', data).catch(err => {
+                setOrderStatus('error')
+                console.log(err.data)
+            }) //TODO: handle error
             
             
             if(response.data.status === 'success'){
                 orderID.current = response.data.data.orderID
                 intervalID.current = setInterval(checkOrderStatus, 5000)
+                orderStatusRef.current = 'waiting'
+                setOrderStatus('waiting')
 
-                history.replace({ state: {orderDetails:undefined, isOrderSent:true, orderID: response.data.data.orderID} })
+                history.replace({ state: {orderDetails:undefined, isOrderSent:true, orderID: response.data.data.orderID, orderStatus: 'waiting'} })
             }
             else{
                 //TODO: handle status === error
@@ -58,12 +64,20 @@ export function useOrderStatus() {
         [checkOrderStatus, history],
     )
     
+    if(!history.location.state){
+        history.push('/')
+    }
+
     useEffect(() => {
 
         const cleanup = () => {
             console.log('cleanup()')
-            if(orderID.current)
-                axios.put(`/api/order/${orderID.current}/canceled`)
+            if(orderStatusRef.current === 'waiting'){
+                if(orderID.current){
+                    axios.put(`/api/order/${orderID.current}/canceled`)
+                    history.push('/')
+                }
+            }
 
             clearInterval(intervalID.current)
         }
@@ -84,10 +98,16 @@ export function useOrderStatus() {
         //TODO: w przpadku odświezenia strony po zaakceptowaniu zamowienia przez restauracje, zamowienie jest anulowane
         //if user refresh page in waiting state, canceled order
         else if(history.location.state.isOrderSent === true && history.location.state.orderID){
-            if(orderStatusRef.current === 'waiting'){
+            
+            if(history.location.state.orderStatus === 'waiting'){
                 axios.put(`/api/order/${history.location.state.orderID}/canceled`)
-                history.push('/')
             }
+            
+            // if(orderStatusRef.current === 'waiting'){
+            //     axios.put(`/api/order/${history.location.state.orderID}/canceled`)
+            // }
+
+            history.push('/')
         }
 
                 
